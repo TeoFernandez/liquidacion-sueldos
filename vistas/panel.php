@@ -15,6 +15,6 @@ if (!isset($_SESSION["usuario"])) {
 <body>
     <h2>Bienvenido, <?= htmlspecialchars($_SESSION["usuario"]) ?>!</h2>
     <p>Este es el panel principal del sistema de liquidación de sueldos.</p>
-    <p><a href="logout.php">Cerrar sesión</a></p>
+    <p><a href="../logout.php">Cerrar sesión</a></p>
 </body>
 </html>

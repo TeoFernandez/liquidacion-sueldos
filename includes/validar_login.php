@@ -1,11 +1,10 @@
 <?php
 session_start();
-include("conexion.php");
+include("conexion.php"); // este archivo se incluye desde /includes
 
 $usuario = $_POST["usuario"] ?? '';
 $clave = $_POST["clave"] ?? '';
 
-// Consulta segura con prepared statements
 $sql = "SELECT * FROM usuarios WHERE usuario = ? AND clave = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $usuario, $clave);
@@ -14,8 +13,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows === 1) {
     $_SESSION["usuario"] = $usuario;
-    header("Location: panel.php");
+    header("Location: ../vistas/panel.php");
 } else {
-    header("Location: login.php?error=1");
+    header("Location: ../vistas/login.php?error=1");
 }
-?>
