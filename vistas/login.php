@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Liquidación de Sueldos</title>
+    <title>Login</title>
 </head>
 <body>
     <h2>Iniciar sesión</h2>
