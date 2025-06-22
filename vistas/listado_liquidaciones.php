@@ -82,10 +82,12 @@ $resultado = $stmt->get_result();
         <input type="month" name="mes" value="<?= $filtro_mes ?>">
 
         <input type="submit" value="Aplicar filtros">
-        <a href="listado_liquidaciones.php">Limpiar</a>
+        <a href="listado_liquidaciones.php">Limpiar 🧹</a>
     </form>
 
     <hr>
+    <br>
+    <br>
 
     <?php if ($resultado->num_rows > 0): ?>
         <table border="1" cellpadding="5">
