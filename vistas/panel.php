@@ -10,6 +10,7 @@ if (!isset($_SESSION["usuario"])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/panel.css">
     <title>Panel principal</title>
 </head>
 <body>
