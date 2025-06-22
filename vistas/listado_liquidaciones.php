@@ -122,6 +122,7 @@ $resultado = $conn->query($sql);
                     <td>$<?= number_format($fila["descuento_aplicado"], 2) ?></td>
                     <td>$<?= number_format($fila["sueldo_neto"], 2) ?></td>
                     <td><?= $fila["fecha_liquidacion"] ?></td>
+                    <td><a href="recibo_pdf.php?id=<?= $fila["id_liquidacion"] ?>" target="_blank">📄 PDF</a></td>
                 </tr>
             <?php endwhile; ?>
         </table>
