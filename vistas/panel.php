@@ -19,7 +19,6 @@ if (!isset($_SESSION["usuario"])) {
         <li><a href="empleados.php">Gestionar Empleados</a></li>
         <li><a href="liquidaciones.php">Liquidación</a></li>
         <li><a href="listado_liquidaciones.php">Listado de Liquidaciones</a></li>
-        <li><a href="reportes.php">Generar Reportes</a></li>
     </ul>
     <p><a href="../logout.php">Cerrar sesión</a></p>
 </body>

@@ -61,4 +61,5 @@ $html = "
 ";
 
 $pdf->writeHTML($html);
+$pdf->IncludeJS("print(true);"); // abre la impresión automática
 $pdf->Output("recibo_{$liq['nombre']}_{$liq['mes']}.pdf", 'I'); // Mostrar en navegador
