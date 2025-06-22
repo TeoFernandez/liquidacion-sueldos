@@ -6,6 +6,56 @@ if (!isset($_SESSION["usuario"])) {
 }
 include("../includes/conexion.php");
 
+// Obtener lista de empleados para el filtro
+$empleados_lista = $conn->query("SELECT id_empleado, nombre FROM empleados ORDER BY nombre ASC");
+
+// Capturar filtros desde la URL (GET)
+$filtro_empleado = $_GET["empleado"] ?? "";
+$filtro_mes = $_GET["mes"] ?? "";
+
+// Armar condiciones dinámicas
+$where = [];
+$params = [];
+$tipos = "";
+
+if ($filtro_empleado) {
+    $where[] = "l.id_empleado = ?";
+    $params[] = $filtro_empleado;
+    $tipos .= "i";
+}
+
+if ($filtro_mes) {
+    $where[] = "l.mes = ?";
+    $params[] = $filtro_mes;
+    $tipos .= "s";
+}
+
+$condiciones = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
+
+// Preparar la consulta
+$sql = "
+SELECT 
+    l.id_liquidacion,
+    l.mes,
+    l.sueldo_bruto,
+    l.descuento_aplicado,
+    l.sueldo_neto,
+    l.fecha_liquidacion,
+    e.nombre AS empleado
+FROM liquidaciones l
+JOIN empleados e ON l.id_empleado = e.id_empleado
+$condiciones
+ORDER BY l.mes DESC, e.nombre ASC
+";
+
+$stmt = $conn->prepare($sql);
+if (!empty($params)) {
+    $stmt->bind_param($tipos, ...$params);
+}
+$stmt->execute();
+$resultado = $stmt->get_result();
+
+
 // Consulta con JOIN para traer datos del empleado
 $sql = "
 SELECT 
@@ -31,6 +81,28 @@ $resultado = $conn->query($sql);
 </head>
 <body>
     <h2>Historial de Liquidaciones</h2>
+
+    <h2>Filtrar Liquidaciones</h2>
+<form method="GET">
+    <label>Empleado:</label>
+    <select name="empleado">
+        <option value="">Todos</option>
+        <?php while ($emp = $empleados_lista->fetch_assoc()): ?>
+            <option value="<?= $emp['id_empleado'] ?>" <?= ($emp['id_empleado'] == $filtro_empleado) ? 'selected' : '' ?>>
+                <?= htmlspecialchars($emp['nombre']) ?>
+            </option>
+        <?php endwhile; ?>
+    </select>
+
+    <label>Mes:</label>
+    <input type="month" name="mes" value="<?= $filtro_mes ?>">
+
+    <input type="submit" value="Aplicar filtros">
+    <a href="listado_liquidaciones.php">Limpiar</a>
+</form>
+
+<hr>
+
 
     <?php if ($resultado->num_rows > 0): ?>
         <table border="1" cellpadding="5">
