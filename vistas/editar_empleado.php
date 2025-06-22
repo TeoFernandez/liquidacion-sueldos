@@ -27,6 +27,7 @@ $empleado = $resultado->fetch_assoc();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/editar_empleado.css">
     <title>Editar Empleado</title>
 </head>
 <body>

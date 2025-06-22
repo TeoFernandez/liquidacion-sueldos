@@ -1,0 +1,132 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+    background: linear-gradient(135deg, #121212, #1a1a1a);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+/* Título */
+h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00bcd4;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: #2b2b2b;
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+td a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Formulario */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2c2c2c;
+    color: #fff;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0097a7;
+}
+
+/* Enlace volver */
+a[href="panel.php"] {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #e53935;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a[href="panel.php"]:hover {
+    color: #ff6b6b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    table, th, td {
+        font-size: 0.9rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    input[type="submit"] {
+        padding: 12px;
+    }
+}

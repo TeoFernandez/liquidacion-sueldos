@@ -15,6 +15,7 @@ $empleados = $conn->query($sql);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/liquidaciones.css">
     <title>Liquidar Sueldo</title>
 </head>
 <body>

@@ -15,6 +15,7 @@ $resultado = $conn->query($sql);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/empleados.css">
     <title>Empleados</title>
 </head>
 <body>

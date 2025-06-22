@@ -77,6 +77,7 @@ $resultado = $conn->query($sql);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/historial.css">
     <title>Listado de Liquidaciones</title>
 </head>
 <body>

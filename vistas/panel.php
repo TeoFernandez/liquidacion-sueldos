@@ -18,7 +18,7 @@ if (!isset($_SESSION["usuario"])) {
     <p>Este es el panel principal del sistema de liquidación de sueldos.</p>
     <ul>
         <li><a href="empleados.php">Gestionar Empleados</a></li>
-        <li><a href="liquidaciones.php">Liquidación</a></li>
+        <li><a href="liquidaciones.php">Liquidación de Sueldos</a></li>
         <li><a href="listado_liquidaciones.php">Listado de Liquidaciones</a></li>
     </ul>
     <p><a href="../logout.php">Cerrar sesión</a></p>
