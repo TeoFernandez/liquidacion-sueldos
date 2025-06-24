@@ -6,14 +6,11 @@ if (!isset($_SESSION["usuario"])) {
 }
 include("../includes/conexion.php");
 
-// Obtener lista de empleados para el formulario
 $empleados_lista = $conn->query("SELECT id_empleado, nombre FROM empleados ORDER BY nombre ASC");
 
-// Capturar filtros desde la URL (GET)
 $filtro_empleado = $_GET["empleado"] ?? "";
 $filtro_mes = $_GET["mes"] ?? "";
 
-// Armar condiciones dinámicas
 $where = [];
 $params = [];
 $tipos = "";
@@ -32,7 +29,6 @@ if (!empty($filtro_mes)) {
 
 $where_clause = count($where) > 0 ? "WHERE " . implode(" AND ", $where) : "";
 
-// Consulta final con filtros aplicados
 $sql = "
     SELECT 
         l.id_liquidacion,
