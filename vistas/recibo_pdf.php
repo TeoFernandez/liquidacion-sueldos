@@ -26,7 +26,7 @@ $liq = $result->fetch_assoc();
 $pdf = new TCPDF();
 $pdf->SetMargins(20, 40, 20); // margen superior más grande por el logo
 $pdf->AddPage();
-$pdf->Image('../assets/logo.png', 150, 15, 40); // ruta, x, y, ancho
+$pdf->Image('../img/logo.png', 150, 15, 40); // ruta, x, y, ancho
 $pdf->SetFont('helvetica', '', 12);
 
 $html = "
