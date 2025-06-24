@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexion.php"); // este archivo se incluye desde /includes
+include("conexion.php");
 
 $usuario = $_POST["usuario"] ?? '';
 $clave = $_POST["clave"] ?? '';
