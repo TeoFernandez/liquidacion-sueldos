@@ -2,7 +2,6 @@
 require_once("../tcpdf/tcpdf.php");
 include("../includes/conexion.php");
 
-// Recibir ID de liquidación
 $id = $_GET["id"] ?? 0;
 
 $sql = "
@@ -23,15 +22,13 @@ if ($result->num_rows !== 1) {
 
 $liq = $result->fetch_assoc();
 
-// Crear PDF
+
 $pdf = new TCPDF();
 $pdf->SetMargins(20, 40, 20); // margen superior más grande por el logo
 $pdf->AddPage();
-// Insertar el logo (x, y, ancho)
-$pdf->Image('../assets/logo.png', 150, 15, 40); // ruta, x, y, ancho en mm
+$pdf->Image('../assets/logo.png', 150, 15, 40); // ruta, x, y, ancho
 $pdf->SetFont('helvetica', '', 12);
 
-// Contenido
 $html = "
 <h2>Recibo de Sueldo</h2>
 <p><strong>Empleado:</strong> {$liq['nombre']}</p>

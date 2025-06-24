@@ -8,7 +8,6 @@ include("../includes/conexion.php");
 
 $id = $_GET["id"] ?? 0;
 
-// Buscar el empleado por ID
 $sql = "SELECT * FROM empleados WHERE id_empleado = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);

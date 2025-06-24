@@ -6,7 +6,6 @@ if (!isset($_SESSION["usuario"])) {
 }
 include("../includes/conexion.php");
 
-// Obtener lista de empleados
 $sql = "SELECT id_empleado, nombre FROM empleados ORDER BY nombre ASC";
 $empleados = $conn->query($sql);
 ?>

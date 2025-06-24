@@ -6,7 +6,6 @@ if (!isset($_SESSION["usuario"])) {
 }
 include("../includes/conexion.php");
 
-// Obtener empleados actuales
 $sql = "SELECT * FROM empleados ORDER BY nombre ASC";
 $resultado = $conn->query($sql);
 ?>
