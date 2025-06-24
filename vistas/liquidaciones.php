@@ -4,7 +4,7 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit();
 }
-include("../includes/conexion.php");
+include("../Back-end/conexion.php");
 
 $sql = "SELECT id_empleado, nombre FROM empleados ORDER BY nombre ASC";
 $empleados = $conn->query($sql);
@@ -20,7 +20,7 @@ $empleados = $conn->query($sql);
 <body>
     <h2>Liquidación de Sueldos</h2>
 
-    <form action="../includes/guardar_liquidacion.php" method="POST">
+    <form action="../Back-end/guardar_liquidacion.php" method="POST">
         <label>Empleado:</label><br>
         <select name="id_empleado" required>
             <option value="">Seleccione...</option>

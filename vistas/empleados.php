@@ -4,7 +4,7 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit();
 }
-include("../includes/conexion.php");
+include("../Back-end/conexion.php");
 
 $sql = "SELECT * FROM empleados ORDER BY nombre ASC";
 $resultado = $conn->query($sql);
@@ -40,13 +40,13 @@ $resultado = $conn->query($sql);
                 <td>$<?= number_format($fila["sueldo_bruto"], 2) ?></td>
                 <td><?= $fila["descuento_porcentaje"] ?>%</td>
                 <td><a href="editar_empleado.php?id=<?= $fila["id_empleado"] ?>">Editar</a></td>
-                <td><a href="../includes/eliminar_empleado.php?id=<?= $fila["id_empleado"] ?>" onclick="return confirm('¿Estás seguro de que querés eliminar este empleado?');">Eliminar</a></td>
+                <td><a href="../Back-end/eliminar_empleado.php?id=<?= $fila["id_empleado"] ?>" onclick="return confirm('¿Estás seguro de que querés eliminar este empleado?');">Eliminar</a></td>
             </tr>
         <?php } ?>
     </table>
 
     <h3>Agregar nuevo empleado</h3>
-    <form action="../includes/guardar_empleado.php" method="POST">
+    <form action="../Back-end/guardar_empleado.php" method="POST">
         <label>Nombre:</label><br>
         <input type="text" name="nombre" required><br><br>
 

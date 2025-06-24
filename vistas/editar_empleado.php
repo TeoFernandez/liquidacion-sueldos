@@ -4,7 +4,7 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit();
 }
-include("../includes/conexion.php");
+include("../Back-end/conexion.php");
 
 $id = $_GET["id"] ?? 0;
 
@@ -31,7 +31,7 @@ $empleado = $resultado->fetch_assoc();
 </head>
 <body>
     <h2>Editar empleado</h2>
-    <form action="../includes/actualizar_empleado.php" method="POST">
+    <form action="../Back-end/actualizar_empleado.php" method="POST">
         <input type="hidden" name="id_empleado" value="<?= $empleado["id_empleado"] ?>">
 
         <label>Nombre:</label><br>

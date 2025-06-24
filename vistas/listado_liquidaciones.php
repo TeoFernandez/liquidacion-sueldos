@@ -4,7 +4,7 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit();
 }
-include("../includes/conexion.php");
+include("../Back-end/conexion.php");
 
 $empleados_lista = $conn->query("SELECT id_empleado, nombre FROM empleados ORDER BY nombre ASC");
 

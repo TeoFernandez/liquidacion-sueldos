@@ -9,7 +9,7 @@
     <div class="login-container">
         <h2>Iniciar sesión</h2>
         
-        <form action="../includes/validar_login.php" method="POST">
+        <form action="../Back-end/validar_login.php" method="POST">
             <label>Usuario:</label><br>
             <input type="text" name="usuario" required><br><br>
 

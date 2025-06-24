@@ -1,6 +1,6 @@
 <?php
 require_once("../tcpdf/tcpdf.php");
-include("../includes/conexion.php");
+include("../Back-end/conexion.php");
 
 $id = $_GET["id"] ?? 0;
 
